@@ -1,0 +1,403 @@
+\documentclass[12pt]{book}
+
+\usepackage{amsfonts, amssymb, amsmath, esvect}
+
+
+%%%%%%%%%%%%%%%
+\def\A{\mathbb A}
+\def\Ac{\mathcal A}
+\def\Bc{\mathcal B}
+\def\C{\mathbb C}
+\def\Cc{\mathcal C}
+\def\E{\mathcal E}
+\def\F{\mathbb F}
+\def\G{\mathbb G}
+\def\Q{\mathbb Q}
+\def\N{\mathbb N}
+\def\Mc{\mathcal M}
+\def\P{\mathbb P}
+\def\R{\mathbb R}
+\def\Rc{\mathcal R}
+\def\Z{\mathbb Z}
+\def\H{\mathbb H}
+\def\Z{\mathbb Z}
+\def\1{\widehat{1}}
+\def\2{\widehat{2}}
+\def\0{\widehat{0}}
+
+\def\O{\mathcal O}
+
+\def\ds{\displaystyle\sum}
+\def\defq{\stackrel{def}{=}}
+\def\m{\rm m}
+%%%%%%%%%%%
+\def\exi{e\-xi\-st\u a }
+\def\ai{ast\-fel \^{\i}n\-c\^at }
+\def\contentsname{Cuprins}
+\def\chaptername{Cursul}
+\def\noi{\noindent}
+%%%%%%%%%%%%%
+\def\Dem{\noindent{\bf Demonstra\c tie. }}
+\def\spa{spa\c tiu a\-fin }
+\def\ddc{da\-c\u a \c si nu\-mai da\-c\u a }
+
+\def\ra{\rightarrow}
+
+\newtheorem{defi}{Defini\c tia }
+
+\newtheorem{thm}{Teorema }
+\newtheorem{prop}{Propozi\c tia }
+\newtheorem{exe}{Exerci\c tiul }
+\newtheorem{coro}{Corolarul }
+
+\newtheorem{lem}{Lema }
+\newtheorem{obs}{Observa\c tia. }
+
+\title{Geometrie - semestrul II}
+\author{V. Vuletescu}
+\date{}
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+
+\chapter{Spa\c tii afine \c si euclidiene}
+
+\section{Spa\c tii afine}
+\subsection{Defini\c tii, propriet\u a\c ti elementare. Combina\c tii afine.}
+
+\begin{defi} Fie $V$ un spa\c tiu vectorial peste un corp $K.$ Se nume\c ste {\em spa\c tiu afin} de direc\c tie $V$, o mul\c time $\Ac$ \^{\i}nzestrat\u a cu o aplica\c tie $\varphi:\Ac\times \Ac \ra V$ ce satisface:
+
+{\bf A1:} {\em "Regula lui Chasles:"} $\varphi(A, B)+\varphi(B, C)=\varphi(A, C), \forall A, B, C\in \Ac;$ 
+
+{\bf A2:} Exist\u a un punct $O\in \Ac $ \ai aplica\c tia
+$A\mapsto \varphi(O, A)$ este bijectiv\u a. 
+\end{defi}
+
+
+{\bf Nota\c tie.} Vom nota $\vv{AB}=\varphi(A, B)$; cu aceast\u a nota\c tie  "regula lui Chasles" devine
+$$\vv{AB}+\vv{BC}=\vv{AC}.$$
+
+{\bf Terminologie.}
+Elementele lui $\Ac$ le vom numi {\em "puncte"}, iar elementele lui $V$ le vom numi {\em "vectori liberi"}.
+Spa\c tiul vectorial $V$ se va mai nota \c si $dir(\Ac).$
+
+{\bf Defini\c tie.} Dac\u a $\Ac$ este un spa\c tiu afin de direc\c tie $V,$ vom pune prin defini\c tie
+$$\dim(\Ac)=\dim_K(V).$$
+ 
+{\bf Exemplu.} Fie $V$ un spa\c tiu vectorial: aplica\c tia $\varphi:V\times V\ra V$ 
+$$\varphi(u, v)=v-u$$
+define\c ste o structur\u a de spa\c tiu afin pe $V,$ numit\u a {\em structura afin\u a canonic\u a.}
+
+\begin{prop} Dac\u a $\Ac$ este un spa\c tiu afin, atunci: 
+
+1) pentru orice $O'\in \Ac$, aplica\c tia
+$P\mapsto \vv{O'P}$ este o bijec\c tie \^{\i}ntre $\Ac$ \c si $dir(\Ac)$ {\em ("Axioma {\bf A2} nu depinde de alegerea lui $O$").}
+
+2) pentru orice $P\in \Ac$ avem $\vv{PP}=0_V.$
+
+3) pentru orice $P, Q\in \Ac$ avem
+$$\vv{PQ}=-\vv{QP}.$$
+\end{prop}
+
+
+
+
+\Dem 1)  Fie $v\in V$ arbitrar; consider\u am vectorul $u=v-\vv{O'O}.$ Din {\bf A2}, exist\u a \c si este unic $P\in \Ac$ \ai $\vv{OP}=u$; deci
+$\vv{OP}=v-\vv{O'O}$ ceea ce este \^inc\u a echivalent cu
+$$v=\vv{OP}+\vv{O'O}$$ 
+i.e. $v=\vv{O'P},$ din regula lui Chasles.
+
+Vedem deci c\u a pentru orice vector $v\in V$ exist\u a \c si este unic $P$ \ai $\vv{O'P}=v,$ deci aplica\c tia $P\mapsto \vv{O'P}$ este bijectiv\u a.
+
+2) Avem $$\vv{PP}+\vv{PP}=\vv{PP}$$ deci $$\vv{PP}=0_V.$$
+
+3) $\vv{PQ}+\vv{QP}=\vv{PP}=O_V$ deci $\vv{QP}=-\vv{PQ}$ din punctul anterior.
+
+
+\begin{prop} Fie $\Ac $ un spa\c tiu afin \c si $O\in \Ac$ un punct arbitrar fixat. Fie 
+$P_1, \dots, P_n\in \Ac$ 
+\c si 
+$a_1, \dots, a_n\in K$ cu $\ds_{i=1}^na_i=1.$ 
+Atunci  punctul $P$ unic  definit de rela\c tia
+$$\vv{OP}=\sum_{i=1}^n a_i\vv{OP_i},$$
+nu depinde de alegerea lui $O.$
+\end{prop}
+
+\Dem Fie $O'\in \Ac$ arbitrar \c si $P'$ \ai 
+$$\vv{O'P'}=\sum_{i=1}^n a_i\vv{O'P_i}.$$
+Aceasta este \^inc\u a echivalent cu
+$$\vv{OO'}+\vv{O'P'}=\vv{OO'}+\sum_{i=1}^n a_i\vv{O'P_i}.$$
+Cum $\ds_{1=1}^na_i=1$ rela\c tia devine
+$$\vv{OO'}+\vv{O'P'}=\sum_{i=1}^na_i\vv{OO'}+\sum_{i=1}^n a_i\vv{OP_i}$$ 
+deci
+$$\vv{OO'}+\vv{O'P'}=\sum_{i=1}^na_i(\vv{OO'}+a_i\vv{O'P_i}).$$
+Din regula lui Chasles aceasta este  echivalent cu
+$$\vv{OP'}=\sum_{i=1}^n a_i\vv{OP_i}=\vv{OP}$$
+deci $P'=P.$ 
+
+{\bf Nota\c tie.} Punctul $P$ definit de rela\c tia
+$$\vv{OP}=\sum_{i=1}^n a_i\vv{OP_i}$$
+se noteaz\u a 
+$$P=\sum_{k=1}^na_kP_k$$
+\c si se nume\c ste {\em combina\c tia afin\u a} a (sau {\em baricentrul})  punctelor $P_1,\dots, P_k$ cu ponderile $a_1,\dots, a_k.$
+
+\begin{exe} Fie $\Ac$  un spa\c tiu afin, $a, b, c\in K,$ $A_1, A_2, B_1, B_2\in \Ac$ arbitrare.
+Ar\u ata\c ti c\u a
+$$a((bA_1+(1-b)A_2)+(1-a)( cB_1+(1-c)B_2=abA_1+a(1-b)A_2+(1-a)cB_1+(1-a)(1-c)B_2$$
+Generalizare.
+\end{exe} 
+
+\subsection{Repere afine \c si carteziene}
+\begin{defi} Fie $\Ac$ un spa\c tiu afin \c si punctele $P_1, \dots, P_n\in \Ac .$ Spunem c\u a:
+
+1) Punctele date sunt {\em afin independente} dac\u a nici unul dintre ele nu se poate exprima ca o combina\c tie afin\u a de celelalte;
+
+2) Punctele date formeaz\u a un {\em sistem afin de generatori} dac\u a orice punct din $\Ac$ se poate exprima ca o combina\c tie afin\u a de ele;
+
+3) Punctele date formeaz\u a un {\em reper afin} dac\u a sunt sistem afin independent \c si sistem afin de generatori.
+\end{defi}
+
+
+\begin{prop} Fie $S=\{P_0, P_1,\dots, P_n\} \subset \Ac$ un sistem de puncte. Atunci:
+
+1) $S$ este sistem afin independent \ddc sistemul de vectori
+$\vv{P_0P_1},\dots, \vv{P_0P_n}$ este sistem liniar independent;
+
+2) $S$ este sistem de generatori \ddc $\vv{P_0P_2},\dots, \vv{P_0P_n}$ este sistem de generatori.
+
+
+\end{prop}
+
+
+
+\Dem
+
+1) $\vv{P_0P_1},\dots,\vv{P_0P_n}$ este sistem de vectori liniar dependent \ddc  exist\u a $k\geq 1$ \ai $\vv{P_0P_k}$ este o combina\c tie liniar\u a de ceilal\c ti vectori din sistem. Fac\^and eventual o renumerotare putem pp $k=n.$ Deci $S$ este liniar dependent \ddc 
+\begin{eqnarray}\label{afindep}
+\vv{P_0P_n}=\sum_{k=1}^{n-1}\alpha_k\vv{P_0P_k}
+\end{eqnarray}
+Dac\u a not\u am $a_0=1-\ds_{k=1}^{n-1}\alpha_k$ \c si $a_k=\alpha_k, k\geq 3$  atunci (\ref{afindep}) se mai scrie \c si sub forma
+\begin{eqnarray}\label{afindep1}
+\vv{P_0P_n}=a_0\vv{P_0P_0}+\sum_{k=1}^{n-1}a_k\vv{P_0P_k}
+\end{eqnarray}
+
+ Vedem deci c\u a (\ref{afindep}) este echivalent\u a cu
+$$P_n=a_0P_0+a_1P_1+\dots +a_{n-1}P_{n-1},$$ 
+i.e. cu faptul c\u a $S$ este afin dependent.
+
+
+2) Fie $v\in V$ arbitrar. Din {\bf A2} exist\u a $P\in \Ac$ \ai $\vv{P_0P}=v.$ 
+
+\noi Dac\u a $\{P_0,\dots, P_n\}$ este sistem afin de generatori, punctul $P$ se poate a
+exprima ca o combina\c tie afin\u a:
+$$P=\sum_{i=0}^n a_iP_i, \text{ cu }\sum_{i=0}^n a_i=1.$$
+Dar atunci rezult\u a ca 
+$$\vv{P_0P}=\sum_{i=0}^n a_i\vv{P_0P_i}.$$
+Cum $\vv{P_0P_0}=0$ rela\c tia de mai sus devine
+$$v=\sum_{i=1}^n a_i\vv{P_0P_i}$$
+deci, cum $v$ a fost arbitrar, deducem ca $\{\vv{P_0P_1}, \dots, \vv{P_0P_n}\}$ este sistem de genratori.
+
+Reciproca - exerci\c tiu!
+
+
+
+\begin{defi} Fie $\Ac$ un spa\c tiu afin de direc\c tie spa\c tiul vectorial $V.$ 
+
+a) Se nume\c ste
+reper cartezian al lui $\Ac$ un cuplu $\Rc=(O, \Bc)$ unde $O\in \Ac$ este un punct, iar $\Bc=\{e_1,\dots, e_n\}\subset V$ este o baz\u a a lui $V$.
+
+b) fie $\Rc=\left( O, \Bc=\{e_1,\dots, e_n\}\right)$ un reper cartezian fixat \c si $P\in \Ac$ un punct arbitrar. Coordonatele  vectorului $\vv{OP}$ \^{\i}n baza $\Bc,$
+$$\vv{OP}=\sum_{i=1}^nx_ie_i$$
+se numesc {\em coordonatele carteziene ale lui $P$} \^{\i}n raport cu reperul $\Rc$.
+\end{defi}
+
+\begin{coro} Fie $S=\{P_0,\dots, P_n\}\subset \Ac$ un sistem de puncte. Atunci $S$ este reper afin \ddc
+$\left(P_1, \{\vv{P_1P_2},\dots, \vv{P_1P_n}\}\right)$ este reper cartezian. 
+\end{coro}
+
+
+{\bf Observa\c tie.} Similar cu no\c tiunea de coordonate carteziene, putem defini {\em coordonatele afine} ale unui punct $P$ fa\c t\u a de un reper afin $\Rc_{af}=(P_0,\dots, P_n)$  ca fiind scalarii
+$(a_0, \dots, a_n)$ cu propriet\u a\c tile
+$$\sum_{k=0}^na_k=1;$$
+$$\vv{OP}=\sum_{k=0}^na_k\vv{OP_k}$$
+unde $O\in \Ac$ este un punct arbitrar.
+
+\begin{exe}
+Fie $\Rc_{af}=\{P_0,\dots, P_n\}$ un reper afin arbitrar fixat. G\u asi\c ti rela\c tia dintre coordonatele {\em carteziene} $(x_1,\dots, x_n)$ ale unui punct $P$ fa\c t\u a de reperul cartezian $\left(P_0, \{\vv{P_0P1},\dots, \vv{P_0P_n}\}\right)$ \c si coordonatele sale afine fa\c t\u a de $\Rc_{af}.$
+\end{exe}
+
+
+
+%%%%%%%%%%%%%%%%%%
+
+
+\subsection{Subspa\c tii afine. Defini\c tii, caracterizare, exemple}
+
+\begin{defi} Fie $\Ac$ \spa de direc\c tie spa\c tiul vectorial $V$ peste corpul $K.$
+Se nume\c ste {\em subspa\c tiu afin} al lui $\Ac$ o submul\c time $\Ac' \subset \Ac$ cu proprietatea c\u a exist\u a un punct $O'\in \Ac'$ \ai
+mul\c timea 
+\begin{eqnarray}\label{dirsb}
+\{\vv{O'P'}\vert P'\in \Ac'\}
+\end{eqnarray}
+este un subspa\c tiu (vectorial) al lui $V.$
+\end{defi}
+
+
+{\bf Observa\c tii.} 
+Dac\u a $\Ac'\subset \Ac$ este subspa\c tiu afin, atunci: 
+
+1) $\Ac'$ este un spa\c tiu afin de direc\c tie $dir(\Ac')=\{\vv{O'P'}\vert P'\in \Ac'\}.$
+
+2) pentru orice $O"\in \Ac'$ are loc egalitatea 
+$$dir(\Ac')=\{\vv{O"P'}\vert P'\in \Ac'\}.$$
+
+
+\Dem 1) Evident.
+
+Pentru 2), s\u a not\u am cu $\Mc_{O"} =\{\vv{O"P'}\vert P'\in \Ac'\}$ \c si de asemenea 
+$$dir_{O'}(\Ac')=\{\vv{O'P'}\vert P'\in \Ac'\}.$$
+Ar\u at\u am c\u a $\Mc_{O"}=dir_{O'}(\Ac').$
+
+\medskip
+
+Pentru $"\subset"$ fie $v\in \Mc_{O"}$ arbitrar,  i.e. $v=\vv{O"P'}$ cu $P'\in \Ac'.$
+Avem 
+$$v=\vv{O'P'}-\vv{O'O"}.$$
+\noi Cum $P', O"\in \Ac'$ avem $\vv{O'P'}, \vv{O'O"}\in dir_{O'}(\Ac').$ Dar $dir_{O'}(\Ac')$ este subspa\c tiu vectorial, deci $v\in dir_{O'}(\Ac').$
+
+Pentru $"\supset"$, fie $v\in dir_{O'}(\Ac')$ arbitrar; din axiomele spa\c tiului afin, exist\u a \c si este unic $Q\in \Ac$ \ai $v=\vv{O"Q}.$ Avem
+$$\vv{O'Q}=\vv{O'O"}+\vv{O"Q}$$
+Dar $\vv{O'O"}\in dir_{O'}(\Ac')$ iar $\vv{O"Q}=v\in dir_{O'}(\Ac')$ din ipotez\u a.
+Rezult\u a c\u a $\vv{O'Q}\in dir_{O'}(\Ac')$ deci $Q\in \Ac';$ ca atare, $v\in \Mc_{O"}.$
+ 
+\begin{exe} Este adev\u arat\u a afirma\c tia:
+
+\noi {\em " Fie $\Ac$ un spa\c tiu afin \c si $\Ac'\subset \Ac$ o sumul\c time. Atunci $\Ac'$ este subspa\c tiu afin \ddc $\{\vv{PQ}\vert P, Q\in \Ac'\}$ este subspa\c tiu vectorial al lui $dir(\Ac')$."}
+
+Justificare.
+\end{exe}
+
+\begin{thm} Fie $\Ac$ un spa\c tiu afin \c si $\Ac'\subset \Ac$  o submul\c time. Atunci 
+
+1) $\Ac'$ este subspa\c tiu afin \ddc pentru orice $n\in \N$ \c si orice sistem de puncte $P_0,
+\dots, P_n\in \Ac'$ \c si orice $a_o\dots, a_n\in K$ cu $\ds_{k=0}^na_k=1$ avem
+$$\ds_{k=0}^na_kP_k\in \Ac'$$
+
+2) Presupunem $char(K)\not =2.$ Atunci $\Ac'$ este subspa\c tiu afin \ddc pentru orice $a, b\in K$ cu $a+b=1$ \c si orice dou\u a puncte $P, Q\in \Ac'$ avem
+$$aP+bQ\in \Ac'.$$
+\end{thm}
+
+\Dem 1) 
+
+$"\Rightarrow"$ fie $O\in \Ac'$ arbitrar fixat. Not\^and $P=\ds_{k=1}^na_kP_k,$ avem
+$$\vv{OP}=\ds_{k=1}^na_k\vv{OP_k}$$
+Cum pentru orice $k$ avem $\vv{OP_k}\in dir_O(\Ac')$ iar $dir(\Ac')$ este subspa\c tiu vectorial, rezult\u a 
+$\vv{OP}\in dir_O(\Ac')$ deci $P\in \Ac'$
+
+
+$"\Leftarrow"$Fie $O\in \Ac'$ arbitrar; ar\u at\u am c\u a
+ $$dir_{O}(\Ac')=\{\vv{OP}\vert P\in \Ac'\}$$
+formeaz\u a subspa\c tiu vectorial. Fie $v_1, v_2\in dir(\Ac')$, $\alpha, \beta\in K$ arbitrari.
+Exist\u a punctele $P_1, P_2\in \Ac'$ \ai $v_1=\vv{OP_1}, v_2=\vv{OP_2}.$
+Din ipoteza, $\Ac'$ este \^{\i}nchis la combina\c tii afine, deci punctul $R$ definit de 
+$$R\defq(1-\alpha-\beta)O+\alpha P_1+\beta P_2$$
+apar\c tine lui $\Ac'.$
+Deducem c\u a $\vv{OR}\in dir_O(\Ac');$ dar 
+$$\vv{OR}=R(1-\alpha-\beta)\vv{OO}+\alpha \vv{OP_1}+\beta \vv{OP_2}=\alpha v_1+\beta v_2,$$
+deci $\alpha v_1+\beta v_2\in dir(\Ac')$
+
+2) Nu avem de demonstrat dec\^at implica\c tia $"\Rightarrow".$ Ar\u at\u am mai \^int\^ai c\u a $dir_O(\Ac')$ este \^{\i}nchis la \^{\i}nmul\c tirea cu scalari. Fie deci $\alpha\in K$, $v\in dir_O(\Ac')$ arbitrari.
+Avem $v=\vv{OP}, P\in \Ac'$ Fie punctul $R$ definit prin
+$$R\defq(1-\alpha)O+\alpha P.$$
+Cum $\Ac;$ este inhcis la combina\c tii afine de dou\u a puncte, rezult\u a c\u a  $R\in \Ac'$ Deci $\vv{OR}\in dir_O(\Ac');$ dar
+$$\vv{OR}=(1-\alpha)\vv{OO}+\alpha \vv{OP}=\alpha v$$
+deci $\alpha v\in dir_O(\Ac').$
+
+Fie acum $v_1, v_2\in dir_O(\Ac')$ arbitrari, i.e. $v_1=\vv{OP_1}, v_2\vv{OP_2}$ cu $P_1, P_2\in \Ac'.$
+Cum $char(K)\not=2$ deducem $2\not=0;$ ca atare, $2$ admite invers in $K,$ fie el $\frac{1}{2}.$
+Evident, $\frac{1}{2}+\frac{1}{2}=1$ deci punctul $R$ definit de
+$$R\defq \frac{1}{2}P_1+\frac{1}{2}P_2$$ 
+apar\c tine lui $\Ac'$deci $\vv{OR}\in dir_O(\Ac').$
+Dar
+$$\vv{OR}=\frac{1}{2}\vv{OP_1}+\frac{1}{2}\vv{OP_2}$$
+deci $\frac{1}{2}{v_1}+\frac{1}{2}v_2\in dir(\Ac').$
+
+Aceasta implic\u a \^{\i}ns\u a faptul ca $dir_O(\Ac')$ este inchis la sum\u a, deoarece
+$v_1+v_2=2(\frac{1}{2}v_1+\frac{1}{2}v_2).$
+
+
+\begin{exe}
+R\u am\^ane adev\u arat punctul 2) din teorema de mai sus \^{\i}n cazul $char(K)=2?$ (Evident, demonstra\c tia nu mai este valabil\u a; dar poate exista alta?!) Justificare.
+\end{exe}
+\begin{center} {\bf Exerci\c tii}
+\end{center}
+
+\newpage
+
+\section{Subspa\c tii afine}
+\subsection{Opera\c tii cu subspa\c tii afine}
+\subsection{Ecua\c tii ale subspa\c tiilor afine.}
+\subsection{Paralelism afin}
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%
+
+\section{Aplica\c tii afine}
+\subsection{Defini\c tie, expresii \^{\i}n coordonate}
+\subsection{Grupul afin}
+
+\section{Spa\c tii afine euclidiene}
+
+\subsection{Defini\c tie, exemple. Repere ortogonale \c si ortonormate.}
+\subsection{Perpendicularitate}
+
+\section{Izometrii}
+\subsection{Defini\c tie, exemple}
+\subsection{Izometriile planului, respectiv spa\c tiului euclidian}
+\chapter{ Hipercuadrice}
+
+\section{ Hipercuadrice afine}
+\subsection{Defini\c tie, echivalen\c t\u a algebric\u a, respectiv afin\u a.}
+\subsection{Invarian\c ti; rangurile unei hipercuadrice afine}
+\subsection{Hieprcuadrice nedegenerate: centru, puncte netede/singulare}
+\subsection{Direc\c tii asimptotice, asimptote}
+
+\section{Clasificarea afin\u a a hipercuadricelor}
+\subsection{Teorema  de clasficiare peste $\C$}
+\subsection{Teorema de clasificare peste $\R$}
+
+\subsection{Clasificarea euclidian\u a a hipercuadricelor}
+
+
+\section{Conice \^{\i}n planul euclidian}
+\subsection{Clasificarea afin\u a a conicelor; reprezent\u ari geometrice}
+\subsection{Conicele nedegenerate ca locuri geometrice}
+
+\section{Cuadrice \^{\i}n spa\c tiul euclidian}
+\subsection{Clasificarea cuadricelor; reprezent\u ari geometrice}
+
+
+\chapter{Geometrie proiectiv\u a }
+
+\section{Spa\c tii proiective}
+
+\section{Subspa\c tii proiective}
+
+\section{Axioma lui Desargues}
+
+\section{Construc\c tia corpului asociat unui spa\c tiu proiectiv}
+
+
+\end{document}
